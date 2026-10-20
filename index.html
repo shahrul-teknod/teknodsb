@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="assets/svc-hcl.png" data-resource-id="svc-hcl">
+<meta name="ext-resource-dependency" content="assets/img-web.jpg" data-resource-id="svc-web">
+<meta name="ext-resource-dependency" content="assets/img-integ.jpg" data-resource-id="svc-integ">
+<meta name="ext-resource-dependency" content="assets/img-data.jpg" data-resource-id="svc-data">
+<meta name="ext-resource-dependency" content="assets/img-intel.jpg" data-resource-id="svc-intel">
+<meta name="ext-resource-dependency" content="assets/img-train.jpg" data-resource-id="svc-train">
+<meta name="ext-resource-dependency" content="assets/shahrul-face.png" data-resource-id="team-shahrul">
+<meta name="ext-resource-dependency" content="assets/zamri-cutout.png" data-resource-id="team-zamri">
+<meta name="ext-resource-dependency" content="assets/zamzam-cutout.png" data-resource-id="team-zamzam">
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#fbf9f5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#fbf9f5"/><text x="50" y="62" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="34" fill="#1a1a1a">T</text><rect x="38" y="68" width="24" height="3" fill="#1d4ed8"/></svg></template>
+<x-dc>
+<helmet>
+<title>TEKNOD — Enterprise IT Solutions, Cyberjaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fbf9f5;color:#1a1a1a;font-family:Inter,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1d4ed8;text-decoration:none}
+a:hover{color:#1742b8;text-decoration:underline}
+*{box-sizing:border-box}
+input,textarea,select{font:inherit}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#fbf9f5">
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(251,249,245,0.88);backdrop-filter:blur(12px);border-bottom:1px solid #e6e2da">
+  <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#1a1a1a;text-decoration:none">
+      <img src="assets/teknod-logo.png" alt="TEKNOD" style="height:44px;width:auto;display:block;border-radius:4px">
+    </a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:transparent;border:1px solid #e6e2da;border-radius:6px;cursor:pointer;padding:0">
+        <span style="display:block;width:18px;height:2px;background:#1a1a1a"></span>
+        <span style="display:block;width:18px;height:2px;background:#1a1a1a"></span>
+        <span style="display:block;width:18px;height:2px;background:#1a1a1a"></span>
+      </button>
+    </sc-if>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+    <nav style="display:flex;align-items:center;gap:28px;font-size:15px">
+      <a href="#about" style="color:#555555">About</a>
+      <a href="#services" style="color:#555555">Services</a>
+      <a href="#training" style="color:#555555">Training Center</a>
+      <a href="#clients" style="color:#555555">Clients</a>
+      <a href="#team" style="color:#555555">Team</a>
+      <a href="#contact" style="background:#1a1a1a;color:#ffffff;padding:9px 16px;border-radius:6px;font-weight:600;text-decoration:none">Get in touch</a>
+    </nav>
+    </sc-if>
+  </div>
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <nav onClick="{{ closeMenu }}" style="display:flex;flex-direction:column;padding:8px 24px 20px;font-size:17px;border-top:1px solid #e6e2da">
+      <a href="#about" style="color:#1a1a1a;padding:12px 0;border-bottom:1px solid #eeeae2;text-decoration:none">About</a>
+      <a href="#services" style="color:#1a1a1a;padding:12px 0;border-bottom:1px solid #eeeae2;text-decoration:none">Services</a>
+      <a href="#training" style="color:#1a1a1a;padding:12px 0;border-bottom:1px solid #eeeae2;text-decoration:none">Training Center</a>
+      <a href="#clients" style="color:#1a1a1a;padding:12px 0;border-bottom:1px solid #eeeae2;text-decoration:none">Clients</a>
+      <a href="#team" style="color:#1a1a1a;padding:12px 0;border-bottom:1px solid #eeeae2;text-decoration:none">Team</a>
+      <a href="#contact" style="margin-top:16px;background:#1a1a1a;color:#ffffff;padding:12px 16px;border-radius:6px;font-weight:600;text-align:center;text-decoration:none">Get in touch</a>
+    </nav>
+  </sc-if>
+</header>
+
+<section id="top" style="display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 77px);max-width:1200px;margin:0 auto;padding:96px 24px 80px">
+  <sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:56px;align-items:center">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1d4ed8;letter-spacing:0.04em;margin-bottom:20px">HCL BUSINESS PARTNER · CYBERJAYA, MALAYSIA</div>
+        <h1 style="font-size:clamp(40px,5.4vw,64px);line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0 0 24px;text-wrap:balance">Bridging frontend applications and mission-critical infrastructure.</h1>
+        <p style="font-size:19px;line-height:1.6;color:#555555;margin:0 0 36px;max-width:540px;text-wrap:pretty">TEKNOD is a premier IT solutions provider specializing in bespoke web development services and robust HCL Software offerings.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#contact" style="background:#1d4ed8;color:#ffffff;padding:14px 22px;border-radius:6px;font-weight:600;text-decoration:none" style-hover="background:#1742b8;color:#ffffff;text-decoration:none">Talk to our team</a>
+          <a href="#services" style="background:#ffffff;color:#1a1a1a;padding:14px 22px;border-radius:6px;font-weight:600;border:1px solid #e6e2da;text-decoration:none" style-hover="border-color:#1a1a1a;color:#1a1a1a;text-decoration:none">Explore services</a>
+        </div>
+      </div>
+      <img src="assets/img-hero.jpg" alt="Team collaborating in a modern office" style="width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:12px;border:1px solid #e6e2da;background:#f1ede4;display:block">
+    </div>
+  </sc-if>
+  <sc-if value="{{ heroCentered }}" hint-placeholder-val="{{ false }}">
+    <div style="text-align:center;max-width:880px;margin:0 auto">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1d4ed8;letter-spacing:0.04em;margin-bottom:20px">HCL BUSINESS PARTNER · CYBERJAYA, MALAYSIA</div>
+      <h1 style="font-size:clamp(40px,6vw,76px);line-height:1.03;letter-spacing:-0.035em;font-weight:700;margin:0 0 24px;text-wrap:balance">Bridging frontend applications and mission-critical infrastructure.</h1>
+      <p style="font-size:19px;line-height:1.6;color:#555555;margin:0 auto 36px;max-width:620px;text-wrap:pretty">TEKNOD is a premier IT solutions provider specializing in bespoke web development services and robust HCL Software offerings.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="#contact" style="background:#1d4ed8;color:#ffffff;padding:14px 22px;border-radius:6px;font-weight:600;text-decoration:none">Talk to our team</a>
+        <a href="#services" style="background:#ffffff;color:#1a1a1a;padding:14px 22px;border-radius:6px;font-weight:600;border:1px solid #e6e2da;text-decoration:none">Explore services</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="margin-top:80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:1px solid #e6e2da">
+    <div style="padding:24px 24px 0 0"><div style="font-size:40px;font-weight:700;letter-spacing:-0.03em">15 years</div><div style="color:#555555;font-size:15px;margin-top:4px">of delivered projects</div></div>
+    <div style="padding:24px 24px 0 0"><div style="font-size:40px;font-weight:700;letter-spacing:-0.03em">100%</div><div style="color:#555555;font-size:15px;margin-top:4px">project success rate</div></div>
+    <div style="padding:24px 24px 0 0"><div style="font-size:40px;font-weight:700;letter-spacing:-0.03em">HCL</div><div style="color:#555555;font-size:15px;margin-top:4px">Business Partner</div></div>
+  </div>
+</section>
+
+<section id="about" style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;background:#ffffff;border-top:1px solid #e6e2da;border-bottom:1px solid #e6e2da">
+  <div style="width:calc(100% - 48px);max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:56px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a857c;margin-bottom:16px">01 — WHO WE ARE</div>
+      <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0;text-wrap:balance">End-to-end enterprise ecosystems, built with care.</h2>
+    </div>
+    <div style="font-size:18px;line-height:1.7;color:#555555">
+      <p style="margin:0 0 20px;text-wrap:pretty">Driven by our relentless pursuit of innovation and excellence, we have strategically scaled our capabilities to architect comprehensive, end-to-end enterprise ecosystems.</p>
+      <p style="margin:0;text-wrap:pretty">Through this evolution, TEKNOD bridges the gap between powerful frontend applications and mission-critical backend infrastructure—empowering your business to operate faster, scale smarter, and lead with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;max-width:1200px;margin:0 auto;padding:96px 24px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a857c;margin-bottom:16px">02 — WHAT WE DO</div>
+      <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0">Services</h2>
+    </div>
+    <p style="margin:0;max-width:420px;color:#555555;font-size:16px;line-height:1.6">From software licensing and implementation to integration, analytics and team training.</p>
+  </div>
+  <sc-if value="{{ servicesGrid }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <article style="background:#ffffff;border:1px solid #e6e2da;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);transition:box-shadow .2s,transform .2s" style-hover="box-shadow:0 2px 6px rgba(0,0,0,0.08),0 16px 40px rgba(0,0,0,0.12);transform:translateY(-2px)">
+          <sc-if value="{{ s.img }}" hint-placeholder-val="{{ false }}">
+            <div role="img" aria-label="{{ s.title }}" style="margin:-28px -28px 6px;width:calc(100% + 56px);aspect-ratio:16/9;display:block;border-bottom:1px solid #e6e2da;background-color:{{ s.imgBg }};background-image:{{ s.bg }};background-size:{{ s.fit }};background-position:center;background-repeat:no-repeat"></div></sc-if>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1d4ed8">{{ s.num }}</span>
+            <span style="font-size:12px;font-weight:600;color:#555555;background:#f1ede4;padding:4px 10px;border-radius:999px">{{ s.tag }}</span>
+          </div>
+          <h3 style="font-size:21px;font-weight:600;letter-spacing:-0.01em;margin:8px 0 0">{{ s.title }}</h3>
+          <p style="margin:0;color:#555555;font-size:15px;line-height:1.65;text-wrap:pretty">{{ s.body }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+  <sc-if value="{{ servicesList }}" hint-placeholder-val="{{ false }}">
+    <div style="border-top:1px solid #e6e2da">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px 40px;padding:32px 0;border-bottom:1px solid #e6e2da">
+          <div style="display:flex;gap:20px;align-items:baseline">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#1d4ed8">{{ s.num }}</span>
+            <h3 style="font-size:22px;font-weight:600;letter-spacing:-0.01em;margin:0">{{ s.title }}</h3>
+          </div>
+          <p style="margin:0;color:#555555;font-size:16px;line-height:1.65;text-wrap:pretty">{{ s.body }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+</section>
+
+<section id="training" style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;background:#1a1815;color:#ebe7df">
+  <div style="width:calc(100% - 48px);max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:center">
+    <img src="assets/training-center.png" alt="Tamarind Square, Cyberjaya" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:left center;border-radius:12px;border:1px solid #3a3631;display:block">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9a958a;margin-bottom:16px">03 — TEKNOD TRAINING CENTER (TTC)</div>
+      <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0 0 24px;color:#ffffff;text-wrap:balance">Learn in a garden-concept workplace in Cyberjaya.</h2>
+      <p style="font-size:17px;line-height:1.7;color:#c9c4b9;margin:0 0 20px;text-wrap:pretty">TEKNOD Training Center (TTC) is a training provider located at Tamarind Square, Cyberjaya. It is a garden concept office-retail workplace which can attract everyone ranging from multi-cultural students, tech-savvy professional to families around the neighbourhoods in Cyberjaya and the surrounding areas.</p>
+      <p style="font-size:17px;line-height:1.7;color:#c9c4b9;margin:0 0 32px;text-wrap:pretty">We provide trainers for IT courses from your selection.</p>
+      <a href="#contact" style="display:inline-block;background:#3b6df0;color:#ffffff;padding:14px 22px;border-radius:6px;font-weight:600;text-decoration:none" style-hover="background:#1d4ed8;color:#ffffff;text-decoration:none">Enquire about a course</a>
+    </div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;max-width:1200px;margin:0 auto;padding:96px 24px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a857c;margin-bottom:16px">04 — HOW WE WORK</div>
+  <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0 0 48px">Our values</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px">
+    <div style="border-top:2px solid #1a1a1a;padding-top:24px">
+      <h3 style="font-size:21px;font-weight:600;margin:0 0 12px">Teamwork</h3>
+      <p style="margin:0;color:#555555;font-size:15px;line-height:1.7;text-wrap:pretty">We focus on teamwork and bring together the skills that benefit our customers. Collaborating as a team increases innovation, team bonding, learning and development, and a greater sense of achievement.</p>
+    </div>
+    <div style="border-top:2px solid #1a1a1a;padding-top:24px">
+      <h3 style="font-size:21px;font-weight:600;margin:0 0 12px">Happiness</h3>
+      <p style="margin:0;color:#555555;font-size:15px;line-height:1.7;text-wrap:pretty">Enjoying our work in a good environment, with strong relationships among team members and clients, is our utmost priority.</p>
+    </div>
+    <div style="border-top:2px solid #1a1a1a;padding-top:24px">
+      <h3 style="font-size:21px;font-weight:600;margin:0 0 12px">Commitment</h3>
+      <p style="margin:0;color:#555555;font-size:15px;line-height:1.7;text-wrap:pretty">We put our effort, time and desire into making the work reach its goal, and go the extra mile to get the job done no matter how big or small the task.</p>
+    </div>
+  </div>
+</section>
+
+<section id="clients" style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;background:#ffffff;border-top:1px solid #e6e2da;border-bottom:1px solid #e6e2da">
+  <div style="width:calc(100% - 48px);max-width:1200px;margin:0 auto;padding:96px 24px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a857c;margin-bottom:16px">05 — OUR VALUED CLIENTS</div>
+        <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0">Trusted for 15 years</h2>
+      </div>
+      <p style="margin:0;max-width:440px;color:#555555;font-size:16px;line-height:1.6">In the past 15 years we have successfully delivered projects with a 100% success rate. Thanks a million to all our customers.</p>
+    </div>
+    <div style="border:1px solid #e6e2da;border-radius:12px;padding:clamp(20px,4vw,48px);background:#ffffff">
+      <img src="assets/clients.png" alt="Clients: MMC, MATRADE, CyberSecurity Malaysia, Universiti Teknologi MARA, ICU Jabatan Perdana Menteri, Celcom, JKSM, Alcom, SME Corp Malaysia, MMC Oil &amp; Gas Engineering, Malaysia Productivity Corporation, Bank Negara Malaysia, Asia e University" style="width:100%;max-width:1000px;height:auto;display:block;margin:0 auto">
+    </div>
+  </div>
+</section>
+
+<section id="team" style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;max-width:1200px;margin:0 auto;padding:96px 24px">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a857c;margin-bottom:16px">06 — MEET THE TEAM</div>
+  <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0 0 48px">The people behind TEKNOD</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),200px));gap:24px">
+    <sc-for list="{{ team }}" as="p" hint-placeholder-count="3">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:1/1;border-radius:12px;border:1px solid #e6e2da;background:#e9e3d6;overflow:hidden;isolation:isolate">
+          <div role="img" aria-label="{{ p.name }}" style="width:100%;height:100%;background-image:{{ p.bg }};background-size:cover;background-position:center top;background-repeat:no-repeat;display:block;filter:grayscale(1)"></div>
+        </div>
+        <div>
+          <div style="font-size:20px;font-weight:600">{{ p.name }}</div>
+          <div style="color:#555555;font-size:15px;margin:4px 0 8px">{{ p.role }}</div>
+          <a href="{{ p.href }}" style="font-size:15px;font-weight:500">{{ p.email }}</a>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="contact" style="display:flex;flex-direction:column;justify-content:center;min-height:100vh;background:#f1ede4;border-top:1px solid #e6e2da">
+  <div style="width:calc(100% - 48px);max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a857c;margin-bottom:16px">07 — CONTACT</div>
+      <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.025em;font-weight:700;margin:0 0 32px;text-wrap:balance">Let's talk about your next project.</h2>
+      <div style="display:flex;flex-direction:column;gap:24px;font-size:16px;line-height:1.6">
+        <div><div style="font-size:13px;font-weight:600;color:#8a857c;margin-bottom:4px">EMAIL</div><a href="mailto:otai@teknod.net" style="font-size:18px;font-weight:500">otai@teknod.net</a></div>
+        <div><div style="font-size:13px;font-weight:600;color:#8a857c;margin-bottom:4px">TELEPHONE</div><a href="tel:+60388005258" style="color:#1a1a1a">03-8800 5258</a></div>
+        <div><div style="font-size:13px;font-weight:600;color:#8a857c;margin-bottom:4px">ADDRESS</div><div>A-04-07 Tamarind Square, Persiaran Multimedia,<br>Cyber 10, 63000 Cyberjaya, Selangor</div></div>
+        <div style="display:flex;gap:16px">
+          <a href="https://facebook.com/teknod.net" style="color:#1a1a1a;font-weight:500">Facebook ↗</a>
+          <a href="https://instagram.com/teknodsb" style="color:#1a1a1a;font-weight:500">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+    <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#ffffff;border:1px solid #e6e2da;border-radius:12px;padding:32px;box-shadow:0 1px 2px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06)">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:16px">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500">Name<input required="" style="padding:12px 14px;border-radius:6px;border:2px solid transparent;background:#f1ede4;outline:none" style-focus="border-color:#1d4ed8"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500">Work email<input type="email" required="" style="padding:12px 14px;border-radius:6px;border:2px solid transparent;background:#f1ede4;outline:none" style-focus="border-color:#1d4ed8"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500">Interested in
+            <select style="padding:12px 14px;border-radius:6px;border:2px solid transparent;background:#f1ede4;outline:none">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="6"><option>{{ s.title }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500">Message<textarea rows="4" style="padding:12px 14px;border-radius:6px;border:2px solid transparent;background:#f1ede4;outline:none;resize:vertical" style-focus="border-color:#1d4ed8"></textarea></label>
+          <button type="submit" style="margin-top:8px;background:#1d4ed8;color:#ffffff;border:none;padding:14px 22px;border-radius:6px;font-weight:600;font-size:16px;cursor:pointer" style-hover="background:#1742b8">Send enquiry</button>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="min-height:360px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+          <div style="width:40px;height:40px;border-radius:999px;background:rgba(21,128,61,0.12);color:#15803d;display:grid;place-items:center;font-weight:700">✓</div>
+          <h3 style="font-size:22px;margin:0">Thank you — we'll be in touch.</h3>
+          <p style="margin:0;color:#555555;line-height:1.6">Our team typically replies within one business day.</p>
+          <button onClick="{{ reset }}" style="align-self:flex-start;margin-top:8px;background:none;border:1px solid #e6e2da;padding:10px 16px;border-radius:6px;font-weight:600;cursor:pointer">Send another</button>
+        </div>
+      </sc-if>
+    </div>
+    </sc-if>
+  </div>
+</section>
+
+<footer style="background:#1a1815;color:#9a958a">
+  <div style="max-width:1200px;margin:0 auto;padding:40px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px">
+    <span style="display:flex;align-items:center;gap:14px"><img src="assets/teknod-logo.png" alt="TEKNOD" style="height:36px;width:auto;display:block;border-radius:4px"><span>Cyberjaya, Selangor, Malaysia</span></span>
+    <span>© 2026 TEKNOD. All rights reserved.</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;split&quot;,&quot;centered&quot;],&quot;default&quot;:&quot;split&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;servicesLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;cards&quot;,&quot;list&quot;],&quot;default&quot;:&quot;cards&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showEnquiryForm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const R = (id, url) => (window.__resources && window.__resources[id]) || url;
+class Component extends DCLogic {
+  state = { sent: false, narrow: typeof window !== 'undefined' && window.innerWidth < 860, menu: false };
+  componentDidMount() {
+    this.onResize = () => { const n = window.innerWidth < 860; if (n !== this.state.narrow) this.setState({ narrow: n, menu: false }); };
+    window.addEventListener('resize', this.onResize); this.onResize();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  renderVals() {
+    const vals = this.vals();
+    vals.showForm = this.props.showEnquiryForm ?? false;
+    vals.narrow = this.state.narrow; vals.wide = !this.state.narrow;
+    vals.mobileOpen = this.state.narrow && this.state.menu;
+    vals.toggleMenu = () => this.setState(s => ({ menu: !s.menu }));
+    vals.closeMenu = () => this.setState({ menu: false });
+    vals.services = vals.services.map(s => ({ ...s, bg: 'url("' + s.img + '")' }));
+    vals.team = vals.team.map(p => ({ ...p, bg: 'url("' + p.photo + '")' }));
+    return vals;
+  }
+  vals() {
+    const hero = this.props.heroLayout ?? 'split';
+    const svc = this.props.servicesLayout ?? 'cards';
+    return {
+      heroSplit: hero === 'split', heroCentered: hero === 'centered',
+      servicesGrid: svc === 'cards', servicesList: svc === 'list',
+      sent: this.state.sent, notSent: !this.state.sent,
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false }),
+      services: [
+        { num: '01', tag: 'HCL Partner', title: 'HCL Software', img: R('svc-hcl', 'assets/svc-hcl.png'), imgBg: '#000000', fit: 'contain', body: 'We provide implementation of HCL software including license purchasing, support and services. As an HCL Business Partner, we ensure HCL products run smoothly.' },
+        { num: '02', tag: 'Cloud-native', title: 'Web Application Development', img: R('svc-web', 'assets/img-web.jpg'), imgBg: '#1a1815', fit: 'cover', body: 'A modern application development approach: agile, cloud-native and API-first architectures that let businesses pivot rapidly and scale seamlessly.' },
+        { num: '03', tag: 'Middleware', title: 'Enterprise Integration', img: R('svc-integ', 'assets/img-integ.jpg'), imgBg: '#1a1815', fit: 'cover', body: 'Advanced Message Queues (MQ) and seamless System Integration (SI) to orchestrate decoupled, resilient microservices.' },
+        { num: '04', tag: 'Governance', title: 'Data Logistics', img: R('svc-data', 'assets/img-data.jpg'), imgBg: '#1a1815', fit: 'cover', body: 'Secure, high-performance file and media transfer software engineered for reliable enterprise data pipelines.' },
+        { num: '05', tag: 'AI & BI', title: 'Operational Intelligence', img: R('svc-intel', 'assets/img-intel.jpg'), imgBg: '#1a1815', fit: 'cover', body: 'Data analytics with Power BI, Tableau and open-source platforms, enriched by AI integration and proactive server monitoring to maximize uptime and unlock predictive insights.' },
+        { num: '06', tag: 'Certified trainers', title: 'IT Training & Talent Enablement', img: R('svc-train', 'assets/img-train.jpg'), imgBg: '#1a1815', fit: 'cover', body: 'Bespoke technical education delivered by certified instructors across your custom selection of IT courses, to upskill teams and accelerate technology adoption.' }
+      ],
+      team: [
+        { name: 'Shahrul', role: 'Managing Director', email: 'shahrul@teknod.net', href: 'mailto:shahrul@teknod.net', photo: R('team-shahrul', 'assets/shahrul-face.png') },
+        { name: 'Zamri', role: 'Technical Consultant', email: 'zamri@teknod.net', href: 'mailto:zamri@teknod.net', photo: R('team-zamri', 'assets/zamri-cutout.png') },
+        { name: 'Zam Zam', role: 'Technical Consultant', email: 'zamzam@teknod.net', href: 'mailto:zamzam@teknod.net', photo: R('team-zamzam', 'assets/zamzam-cutout.png') }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
