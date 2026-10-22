@@ -399,5 +399,11 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var hero = document.querySelector('.enterprise-animate');
+    requestAnimationFrame(function () { hero.classList.add('is-visible'); });
+  });
+</script>
 </body>
 </html>
