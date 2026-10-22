@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TEKNOD | Technology for Betterment</title>
 <script src="./support.js"></script>
 <meta name="ext-resource-dependency" content="assets/svc-hcl.png" data-resource-id="svc-hcl">
 <meta name="ext-resource-dependency" content="assets/img-web.jpg" data-resource-id="svc-web">
@@ -26,6 +25,13 @@
 <x-dc>
 <helmet>
 <title>TEKNOD — Enterprise IT Solutions, Cyberjaya</title>
+<!-- Your Interactive Corporate Hero Section -->
+  <section class="enterprise-animate">
+    <div class="teknod-enterprise">
+      <h1>TEKNOD</h1>
+      <p>Technology for betterment<sup>&#174;</sup></p>
+    </div>
+  </section>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -35,6 +41,60 @@ a{color:#1d4ed8;text-decoration:none}
 a:hover{color:#1742b8;text-decoration:underline}
 *{box-sizing:border-box}
 input,textarea,select{font:inherit}
+/* --- New TEKNOD Section Styles --- */
+    .enterprise-animate {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Sleek dark theme contrast */
+      min-height: 100vh; /* Fills the whole viewing screen */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .teknod-enterprise {
+      text-align: center;
+      color: #ffffff;
+      animation: teknodEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .teknod-enterprise h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      margin: 0 0 15px 0;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .teknod-enterprise p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    .teknod-enterprise sup {
+      font-size: 0.6rem;
+      vertical-align: super;
+      margin-left: 2px;
+      color: #38bdf8;
+    }
+
+    /* --- Smooth Entrance Keyframe --- */
+    @keyframes teknodEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
 </style>
 </helmet>
 
